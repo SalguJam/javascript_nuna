@@ -149,3 +149,11 @@ console.log(animals.indexOf("Baboon"))  // 8
 console.log(animals.indexOf("Bison"))  // 15
 let newAnimals = animals.slice(8,16)
 console.log(newAnimals)
+
+// 정답 : https://hackmd.io/@oW_dDxdsRoSpl0M64Tfg2g/BkyixS9bF
+
+// 오늘의 review
+
+// indexOf()를 이용해서 자꾸 인덱스를 먼저 찾아서 배열을 잘라냈는데, imdexOf("아이템이름")으로 바로 찾아서 사용하는 것도 생각하기
+// 예) "Spider"부터 3개의 아이템을 기존 어레이에서 제거
+// animals.splice(animals.indexOf("Spider"),3)
