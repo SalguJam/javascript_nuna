@@ -1,9 +1,12 @@
-let a = 1
-let b = 2 
-console.log(a,b) // 1,2 
+// 0210_변수
+
+let a = 30
+let b = 50
+console.log(a,b) // 30,50
 
 /* 코드 후에*/ 
-a = 2
-b = 1
+let temp = a
+a = b
+b = temp
 
-console.log(a,b) //  2,1 
+console.log(a,b) //  50,30
