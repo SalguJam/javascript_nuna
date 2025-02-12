@@ -130,30 +130,26 @@ console.log(animals.includes("Human"))
 console.log(animals.includes("Cat"))
 
 // 6. "Red deer"을 "Deer"로 바꾸시오
-console.log(animals.indexOf("Red deer"))  //77
-animals[77] = "Deer"
+animals[animals.indexOf("Red deer")] = "Deer"
 console.log(animals)
 
 // 7. "Spider"부터 3개의 아이템을 기존 어레이에서 제거하시오
-console.log(animals.indexOf("Spider"))  // 81
-animals.splice(81,3)
+animals.splice(animals.indexOf("Spider"),3)
 console.log(animals)
 
 // 8. "Tiger"부터 그 이후의 값을 제거하시오 (Tiger 포함임)
-console.log(animals.indexOf("Tiger"))  // 84
-animals.slice(84)
+animals.splice(animals.indexOf("Tiger"))
 console.log(animals)
 
 // 9. "B"로 시작되는 아이템인 "Baboon"부터 "Bison"까지 가져와 새로운 어레이에 저장하시오
-console.log(animals.indexOf("Baboon"))  // 8
-console.log(animals.indexOf("Bison"))  // 15
-let newAnimals = animals.slice(8,16)
+let newAnimals = animals.slice(animals.indexOf("Baboon"),animals.indexOf("Bison")+1)
 console.log(newAnimals)
 
 // 정답 : https://hackmd.io/@oW_dDxdsRoSpl0M64Tfg2g/BkyixS9bF
 
 // 오늘의 review
 
-// indexOf()를 이용해서 자꾸 인덱스를 먼저 찾아서 배열을 잘라냈는데, imdexOf("아이템이름")으로 바로 찾아서 사용하는 것도 생각하기
-// 예) "Spider"부터 3개의 아이템을 기존 어레이에서 제거
-// animals.splice(animals.indexOf("Spider"),3)
+// console.log(animals.indexOf("Spider")); //결과값 81
+// animals.splice(81, 3);
+// console.log(animals);
+// 다음과 같은 하드 코딩은 하지 말것!!, 인덱스 번호가 달라지는 순간 망가지는 코드임.
