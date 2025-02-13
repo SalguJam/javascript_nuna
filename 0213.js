@@ -34,10 +34,45 @@ for(let i = 1; i<=100; i+=2) {
   console.log(i)
 }
 
-// 문제3. 1부터 50까지 369결과를 프린트하자.
-for(let i = 0; i<=50; i+=3) {
-  console.log(i)
+// 문제3. 1부터 50까지 369결과를 프린트하라.
+// 3의 배수가 아님
+// 3,6,9 가 하나라도 들어간 숫자일때 '짝'으로 변환
+// 포함 개수에 따라 '짝짝'으로 변환
+// 포함되지 않으면 원래 숫자 그대로 출력
+// toString() 사용하기
+
+for(let i = 1; i<=50; i++) {
+  let str = i.toString()  // 숫자 -> 문자열
+  let count = 0 // 3,6,9 가 포함되는 개수 카운트
+
+  for (let j = 0; j < str.length; j++) {
+    if (str[j] === '3' || str[j] === '6' || str[j] === '9') {
+      count+="짝"
+    }
+  }
+  console.log(count.length > 0? count : i)
+
 }
+
+// 다른풀이 찾아보기1
+for (let i = 1; i <= 50; i++) {
+  let count = (i.toString().match(/[369]/g) || []).length; // 3,6,9 개수 확인
+
+  if (count > 0) {
+    console.log("짝".repeat(count)); 
+  } else {
+    console.log(i); // 3,6,9가 없으면 숫자 그대로 출력
+  }
+}
+
+// 다른풀이 찾아보기2
+for (let i = 1; i <= 50; i++) {
+  let count = [...i.toString()].filter(num => num === '3' || num === '6' || num === '9').length;
+  console.log(count > 0 ? '짝'.repeat(count) : i);
+}
+
+
+
 
 // 문제4. 주어진 숫자가 소수이면 true 아니면 false를 출력하는 프로그램을 짜시오.
 let number = 11
