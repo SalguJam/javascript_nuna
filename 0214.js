@@ -47,12 +47,12 @@ console.log(meetAt(2022,1,7))
 // arr 의 값들 중 가장 작은 값을 리턴
 // 만일 arr 가 비어있으면 0을 리턴
 function findSmallestElement(arr) {
-	let result = arr[0];
 	if (arr.length === 0 ) {
 		return 0;
 	}
+    let result = arr[0];
   for (let i = 1; i < arr.length; i++) {
-		if(result > arr[i]) {
+		if(result > arr[i]){
 			result = arr[i];
 		}
 	}
